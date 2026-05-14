@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!-- 继承统一父工程 -->
+    <parent>
+        <groupId>com.coze</groupId>
+        <artifactId>coze-clone-backend-java</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <!-- 微服务网关模块：路由转发、跨域、限流、统一鉴权 -->
+    <artifactId>coze-cloud-gateway</artifactId>
+
+    <dependencies>
+        <!-- 依赖公共模块，继承所有基础依赖 -->
+        <dependency>
+            <groupId>com.coze</groupId>
+            <artifactId>coze-cloud-common</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+<!--        &lt;!&ndash; SpringCloud Gateway 网关核心依赖 &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-starter-gateway</artifactId>-->
+<!--        </dependency>-->
+    </dependencies>
+
+</project>

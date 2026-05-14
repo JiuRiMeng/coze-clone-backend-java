@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!-- 统一继承父工程 -->
+    <parent>
+        <groupId>com.coze</groupId>
+        <artifactId>coze-clone-backend-java</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <!-- 替换为当前模块artifactId：如 coze-cloud-user -->
+    <artifactId>coze-cloud-file</artifactId>
+
+    <dependencies>
+        <!-- 依赖公共模块，统一基础能力 -->
+        <dependency>
+            <groupId>com.coze</groupId>
+            <artifactId>coze-cloud-common</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!-- SpringCloud Stream RocketMQ 消息队列（字节同款，微服务异步解耦） -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-stream-rocketmq</artifactId>
+        </dependency>
+
+        <!-- MinIO 对象存储SDK（对接文件上传、下载、知识库文件存储） -->
+        <dependency>
+            <groupId>io.minio</groupId>
+            <artifactId>minio</artifactId>
+            <version>8.5.7</version>
+        </dependency>
+    </dependencies>
+
+</project>

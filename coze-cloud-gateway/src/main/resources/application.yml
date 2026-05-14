@@ -1,0 +1,21 @@
+server:
+  port: 8088
+
+spring:
+  application:
+    name: coze-cloud-gateway
+  config:
+    import: optional:nacos:coze-cloud-gateway.yml
+
+  cloud:
+    nacos:
+      username: nacos
+      password: nacos
+      config:
+        server-addr: 180.76.149.127:8848
+        namespace: 20eee4db-d319-4fb8-8e16-0cc0f6874979
+        group: DEFAULT_GROUP
+      discovery:
+        server-addr: 180.76.149.127:8848
+        namespace: 20eee4db-d319-4fb8-8e16-0cc0f6874979
+        group: DEFAULT_GROUP

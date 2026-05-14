@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!-- Maven项目基础版本声明 -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 项目坐标 -->
+    <groupId>com.coze</groupId>
+    <artifactId>coze-clone-backend-java</artifactId>
+    <version>1.0.0</version>
+    <!-- 父工程打包方式为pom，用于管理子模块 -->
+    <packaging>pom</packaging>
+
+    <!-- 声明所有子模块 -->
+    <modules>
+        <module>coze-cloud-common</module>
+        <module>coze-cloud-gateway</module>
+        <module>coze-cloud-user</module>
+        <module>coze-cloud-bot</module>
+        <module>coze-cloud-workflow</module>
+        <module>coze-cloud-knowledge</module>
+        <module>coze-cloud-file</module>
+    </modules>
+
+    <!-- 全局属性配置 -->
+    <properties>
+        <!-- JDK编译版本 -->
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <!-- 项目编码 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- 统一版本号管理 -->
+        <spring.boot.version>3.2.5</spring.boot.version>
+        <spring.cloud.version>2023.0.1</spring.cloud.version>
+        <spring.cloud.alibaba.version>2023.0.1.0</spring.cloud.alibaba.version>
+        <mybatis-plus.version>3.5.5.1</mybatis-plus.version>
+        <lombok.version>1.18.30</lombok.version>
+    </properties>
+
+    <!-- 依赖版本统一锁定：子模块无需写版本号，直接继承 -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- SpringBoot 官方依赖版本管理 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- SpringCloud 官方依赖版本管理 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- SpringCloud Alibaba 依赖版本管理（Nacos/Stream/RocketMQ） -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring.cloud.alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
