@@ -10,10 +10,10 @@ spring:
   cloud:
     nacos:
       config:
-        server-addr: 180.76.149.127:8848
-        namespace: 20eee4db-d319-4fb8-8e16-0cc0f6874979
+        server-addr:
+        namespace:
         group: DEFAULT_GROUP
       discovery:
-        server-addr: 180.76.149.127:8848
-        namespace: 20eee4db-d319-4fb8-8e16-0cc0f6874979
+        server-addr:
+        namespace:
         group: DEFAULT_GROUP
