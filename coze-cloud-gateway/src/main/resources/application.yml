@@ -1,19 +1,20 @@
 server:
-  port: 8088
+  port: ${GATEWAY_PORT:8088}
 
 spring:
   application:
     name: coze-cloud-gateway
   config:
-    import: optional:nacos:coze-cloud-gateway.yml
+    import: optional:nacos:${NACOS_DATA_ID:coze-cloud-gateway.yml}
 
   cloud:
     nacos:
       config:
-        server-addr:
-        namespace:
-        group: DEFAULT_GROUP
+        server-addr: ${NACOS_SERVER_ADDR:127.0.0.1:8848}
+        namespace: ${NACOS_NAMESPACE:public}
+        group: ${NACOS_GROUP:DEFAULT_GROUP}
       discovery:
-        server-addr:
-        namespace:
-        group: DEFAULT_GROUP
+        server-addr: ${NACOS_SERVER_ADDR:127.0.0.1:8848}
+        namespace: ${NACOS_NAMESPACE:public}
+        group: ${NACOS_GROUP:DEFAULT_GROUP}
+        ip: ${NACOS_DISCOVERY_IP:}
